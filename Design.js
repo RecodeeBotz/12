@@ -267,6 +267,8 @@ try {
 		pporang = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 		      }
 		const ofrply = await getBuffer(pporang)
+		
+const gime = await getBuffer(`https://hardianto.xyz/api/anime/random?sfw=neko&apikey=hardianto`)		
 //━━━━[ Mess And Others ]━━━━//
 		//>>>>>>>>STICKER<<<<<<<\\
 		const sticOwner = (hehe) => {
@@ -485,7 +487,7 @@ const yor = {
 },mentionedJid:[sender]}, quoted : mek}
 
 		const reply = (teks) => {
-			yoriss.sendMessage(from, teks, text, { thumbnail: ofrply, sendEphemeral: true, quoted: yor, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: ``,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6281358965281?text=Assalamualaikum`}}})
+			yoriss.sendMessage(from, teks, text, { thumbnail: gime, sendEphemeral: true, quoted: yor, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: ``,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6281358965281?text=Assalamualaikum`}}})
 		} 
 		
         const fakeitem = (teks) => { yoriss.sendMessage(from, teks, text, { quoted: { key:{ fromMe:false, participant:`0@s.whatsapp.net`, ...(from ? { remoteJid :"6289523258649-1604595598@g.us" }: {})},message:{"orderMessage":{"orderId":"174238614569481","thumbnail":fs.readFileSync("./database/image/thumb.jpg"),"itemCount":9999999999,"status":"INQUIRY","surface":"CATALOG","message": `${ucapanWaktu} ${pushname}`,"token":"AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="}}},contextInfo: {"forwardingScore":999,"isForwarded":true}, sendEphemeral: true})}
@@ -1229,7 +1231,10 @@ try {
               } catch {
               profilePicou = errorImg
 }
-menuu = `✧⪼ *_Info menu_*
+teks = `*Hallo ${ucapanWaktu} ${pushname}*
+▰▱▰▱▰▱▰▱▰▱▰▱▰▱`
+
+turu = `✧⪼ *_Info menu_*
 *_┏━┅────▭───┄⭑◯_*
 *_╠❏ ${prefix}runtime_*
 *_╠❏ ${prefix}speed_*
@@ -1539,7 +1544,7 @@ menuu = `✧⪼ *_Info menu_*
 *_╠❏ ${prefix}pantun_*
 *_╠❏ ${prefix}bucin_*
 *_╠❏ ${prefix}quotesanime_*
-*_┗━┅──────────┄⭑_*
+*_┗━┅──────────┄⭑_*${readmore}
 ✧⪼ *_Games menu_*
 *_┏━┅────▭───┄⭑◯_*
 *_╠❏ ${prefix}caklontong_*
@@ -1549,7 +1554,7 @@ menuu = `✧⪼ *_Info menu_*
 *_╠❏ ${prefix}tebakkata_*
 *_╠❏ ${prefix}tebakkalimat_*
 *_╠❏ ${prefix}tebakgambar_*
-*_┗━┅──────────┄⭑_*${readmore}
+*_┗━┅──────────┄⭑_*
 ✧⪼ *_Rpg Features_*
 *_┏━┅────▭───┄⭑◯_*
 *_╠❏ ${prefix}joinrpg_*
@@ -1621,12 +1626,11 @@ menuu = `✧⪼ *_Info menu_*
  
 *〔 ⌯ ${botname}⌯ 〕*
 `
-teks = `*Hallo ${ucapanWaktu} ${pushname}*`
-
 buffer = await getBuffer(`https://hardianto.xyz/api/welcome4?profile=${encodeURIComponent(profilePicou)}&name=${encodeURIComponent(pushname)}`)
-anu  = {contextInfo: {"forwardingScore":999,"isForwarded":true,'stanzaId': msgId, 'participant':`${numbernye}@s.whatsapp.net`, 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"locationMessage": {"degreesLatitude": 41.893714904785156, "degreesLongitude": -87.63370513916016, "name": botname , 'jpegThumbnail': fs.readFileSync(`database/image/banner.jpg`)}}}}
-but = [{ buttonId: `${prefix}infosc`, buttonText: { displayText: '⌯ 𝗶𝗻𝗳𝗼𝘀𝗰 ⌯' }, type: 1 }, {mediaUrl:`https://youtu.be/HbfBBjacWj4`}]
-sendButImage(from, teks, menuu, buffer, but, anu)
+buttons = [
+{buttonId:`${prefix}allmenu`, buttonText: {displayText: '</BACK MENU'}, type: 1}
+]
+sendButImage(from, teks, turu, buffer, buttons, yor)
 break
 
 case 'hit':
