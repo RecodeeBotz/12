@@ -1218,16 +1218,18 @@ yoriss.sendMessage(from, buf, audio, {
   mimetype: 'audio/mp4', ptt: true, quoted: yor
 })
 break
+
+
+
+
 case 'allmenu':
 if (!isUser) return sendButton(from, daftar1, daftar2, daftar3, { quoted: yor})
-              try {
+try {
               profilePicou = await yoriss.getProfilePicture(sender)
               } catch {
               profilePicou = errorImg
 }
-teks = `*〔 ⌯ ${botname}⌯ 〕*`
-buffer = await getBuffer(`https://hardianto.xyz/api/welcome4?profile=${encodeURIComponent(profilePicou)}&name=${encodeURIComponent(pushname)}`)
-trans = `✧⪼ *_Info menu_*
+menuu = `✧⪼ *_Info menu_*
 *_┏━┅────▭───┄⭑◯_*
 *_╠❏ ${prefix}runtime_*
 *_╠❏ ${prefix}speed_*
@@ -1619,11 +1621,12 @@ trans = `✧⪼ *_Info menu_*
  
 *〔 ⌯ ${botname}⌯ 〕*
 `
+teks = `*Hallo ${ucapanWaktu} ${pushname}*`
 
+buffer = await getBuffer(`https://hardianto.xyz/api/welcome4?profile=${encodeURIComponent(profilePicou)}&name=${encodeURIComponent(pushname)}`)
+anu  = {contextInfo: {"forwardingScore":999,"isForwarded":true,'stanzaId': msgId, 'participant':`${numbernye}@s.whatsapp.net`, 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"locationMessage": {"degreesLatitude": 41.893714904785156, "degreesLongitude": -87.63370513916016, "name": botname , 'jpegThumbnail': fs.readFileSync(`database/image/banner.jpg`)}}}}
 but = [{ buttonId: `${prefix}infosc`, buttonText: { displayText: '⌯ 𝗶𝗻𝗳𝗼𝘀𝗰 ⌯' }, type: 1 }, {mediaUrl:`https://youtu.be/HbfBBjacWj4`}]
-sendButImage(from, teks, trans, buffer, but, yor)
-hh = fs.readFileSync('./database/media/wataisi.mp3')
-await yoriss.sendMessage(from, hh, MessageType.audio, {qouted: mek, mimetype: 'audio/mp4', ptt:true})  
+sendButImage(from, teks, menuu, buffer, but, anu)
 break
 
 case 'hit':
