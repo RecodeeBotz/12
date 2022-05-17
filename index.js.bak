@@ -1,0 +1,397 @@
+const { WAConnection: _WAConnection, MessageType, Presence, Mimetype, ChatModification, GroupSettingChange, ReconnectMode } = require('@adiwajshing/baileys')
+const simple = require('./database/lib/simple.js')
+const WAConnection = simple.WAConnection(_WAConnection)
+const Design = new WAConnection()
+const qrcode = require("qrcode-terminal")
+const moment = require("moment-timezone")
+const readmore = "͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏";
+const fs = require("fs")
+const util = require('util')
+const figlet = require('figlet')
+const errorImg = 'https://i.ibb.co/FBm52Pt/1e0fe6a08b67.jpg'
+//const term = require('terminal-kit').terminal
+const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
+const fetch = require('node-fetch')
+const { color, bgcolor } = require('./database/lib/color')
+const { exec } = require('child_process')
+const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./database/lib/functions')
+const {settings, BotName, OwnerNumber, OwnerName, NamaSession } = require('./config/setting.json')
+const _welkom = JSON.parse(fs.readFileSync('./database/group/welcome.json'))
+const runtime = function (seconds) {
+  seconds = Number(seconds);
+  var d = Math.floor(seconds / (3600 * 24));
+  var h = Math.floor((seconds % (3600 * 24)) / 3600);
+  var m = Math.floor((seconds % 3600) / 60);
+  var s = Math.floor(seconds % 60);
+  var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " Day, ") : "";
+  var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " Hour, ") : "";
+  var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " Minute, ") : "";
+  var sDisplay = s > 0 ? s + (s == 1 ? " second" : " Second") : "";
+  return dDisplay + hDisplay + mDisplay + sDisplay;
+};
+        var dates = moment().tz('Asia/Jakarta').format("YYYY-MM-DDTHH:mm:ss");
+        var date = new Date(dates);
+        var tahun = date.getFullYear();
+        var bulan = date.getMonth();
+        var tanggal = date.getDate();
+        var hari = date.getDay();
+       
+        switch(hari) {
+            case 0: hari = "Minggu"; break;
+            case 1: hari = "Senin"; break;
+            case 2: hari = "Selasa"; break;
+            case 3: hari = "Rabu"; break;
+            case 4: hari = "Kamis"; break;
+            case 5: hari = "Jum`at"; break;
+            case 6: hari = "Sabtu"; break;
+        }
+		switch(bulan) {
+            case 0: bulan = "Jmekari"; break;
+            case 1: bulan = "Februari"; break;
+            case 2: bulan = "Maret"; break;
+            case 3: bulan = "April"; break;
+            case 4: bulan = "Mei"; break;
+            case 5: bulan = "Juni"; break;
+            case 6: bulan = "Juli"; break;
+            case 7: bulan = "Agustus"; break;
+            case 8: bulan = "September"; break;
+            case 9: bulan = "Oktober"; break;
+            case 10: bulan = "November"; break;
+            case 11: bulan = "Desember"; break;
+        }
+		const Tanggal= "" + hari + ", " + tanggal + " " + bulan + " " + tahun;
+		const jam = moment.tz('Asia/Jakarta').format('HH:mm:ss z')
+		const timeWib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+		const timeWit= moment().tz('Asia/Makassar').format('HH:mm:ss')
+        const timeWita = moment().tz('Asia/Jayapura').format('HH:mm:ss')
+const sleep = async (ms) => {
+return new Promise(resolve => setTimeout(resolve, ms))
+}
+nocache('./Design.js', module => console.log(color('|TRM|'), color(`${module} Updated!`, 'cyan')))
+nocache('./index.js', module => console.log(color('|TRM|'), color(`${module} Updated!`, 'cyan')))
+   
+async function starts() {
+Design.autoReconnect = ReconnectMode.onConnectionLost
+    Design.version = [2, 2142, 12]
+    Design.logger.level = 'warn'
+    Design.browserDescription = ["YORISS","Edge","3.0"]
+    await sleep(10000)
+    Design.on('qr', qr => {
+        qrcode.generate(qr, { small: true })
+        console.log(color('|TRM|'), color('Scan this QR code', 'cyan'))
+      })
+    fs.existsSync(`./config/${NamaSession}.json`) && Design.loadAuthInfo(`./config/${NamaSession}.json`)
+
+    Design.on('connecting', () => {    
+    start(' ','')
+    })
+    Design.on('open', () => {
+    success(' ', 'Dah Connect Tuhh!!')
+   // start('','')
+    })
+        
+    Design.on('credentials-updated', () => {
+        console.log(color('|TRM|'), color('credentials updated!', 'cyan'))
+        })
+     
+      await Design.connect({ timeoutMs: 30 * 1000 });
+  fs.writeFileSync(`./config/${NamaSession}.json`,JSON.stringify(Design.base64EncodedAuthInfo(), null, "\t"));
+ Design.sendMessage(`6281358965281@s.whatsapp.net`, `𝗕𝗼𝘁 𝘁𝗲𝗿𝘀𝗮𝗺𝗯𝘂𝗻𝗴`, MessageType.extendedText)  
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/	
+  
+      
+    Design.on('connecting', () => {
+		console.log(color('|TRM|'), color('Connecting...', 'cyan'))
+		})
+	
+	Design.on('open', () => {
+	console.log(color('|TRM|'), color('Connected', 'cyan'))
+	}) 
+     
+    Design.on('ws-close', () => {
+        console.log(color('|TRM|'), color('Connection lost, trying to reconnect.', 'cyan'))
+        })
+    
+    Design.on('close', async () => {
+        console.log(color('|TRM|'), color('Disconnected.', 'cyan'))
+        })
+
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/	 
+        
+Design.on('CB:action,,battery', json => {
+		global.batteryLevelStr = json[2][0][1].value
+	   global.batterylevel = parseInt(batteryLevelStr)
+		baterai = batterylevel
+        if (json[2][0][1].live == 'true') charging = true
+       if (json[2][0][1].live == 'false') charging = false
+        console.log(json[2][0][1])
+		console.log('Baterai : ' + batterylevel+'%')
+	})
+	global.batrei = global.batrei ? global.batrei : []
+		Design.on('CB:action,,battery', json => {
+		const batteryLevelStr = json[2][0][1].value
+		const batterylevel = parseInt(batteryLevelStr)
+		global.batrei.push(batterylevel)
+		})
+		
+
+
+Design.on('group-update', async (mek) => {
+		const metdata = await Design.groupMetadata(mek.jid)
+    	const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(mek.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${metdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Design;;;\nFN:Design\nitem1.TEL;waid=6281358965281:6281358965281\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
+    if(mek.announce == 'false'){
+    teks = `- [ Group Opened ] -\n\n_Group telah dibuka oleh admin_\n_Sekarang semua member bisa mengirim pesan_`
+    Design.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Opened In ${metdata.subject}`, 'cyan'))
+  }
+  else if(mek.announce == 'true'){
+    teks = `- [ Group Closed ] -\n\n_Group telah ditutup oleh admin_\n_Sekarang hanya admin yang dapat mengirim pesan_`
+    Design.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Closed In ${metdata.subject}`,  'cyan'))
+  }
+  else if(!mek.desc == ''){
+    tag = mek.descOwner.split('@')[0] + '@s.whatsapp.net'
+    teks = `- [ Group Description Change ] -\n\nDeskripsi Group telah diubah oleh Admin @${mek.descOwner.split('@')[0]}\n• Deskripsi Baru : ${mek.desc}`
+    Design.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}, quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Description Change In ${metdata.subject}`, 'cyan'))
+  }
+  else if(mek.restrict == 'false'){
+    teks = `- [ Group Setting Change ] -\n\nEdit Group info telah dibuka untuk member\nSekarang semua member dapat mengedit info Group Ini`
+    Design.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Setting Change In ${metdata.subject}`, 'cyan'))
+  }
+  else if(mek.restrict == 'true'){
+    teks = `- [ Group Setting Change ] -\n\nEdit Group info telah ditutup untuk member\nSekarang hanya admin group yang dapat mengedit info Group Ini`
+    Design.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
+    console.log(color('|TRM|'), color(`Group Setting Change In ${metdata.subject}`,  'cyan'))
+  }
+})
+
+Design.on('CB:action,,call', async json => {
+        const callerId = json[2][0][1].from;
+        var vcard =
+       'BEGIN:VCARD\n' +
+            'VERSION:3.0\n' +
+            'N:Sy;Bot;;;\n' +
+            `FN:${OwnerName}\n` +
+            `item1.TEL;waid=${OwnerNumber}:${OwnerNumber}\n` +
+            `item1.X-ABLabel:👑 Creator\n` +
+            `item2.EMAIL;type=INTERNET:Fake.Botz@gmail.com\n` +
+            `item2.X-ABLabel:📧 Email\n` +
+            `item3.URL:https://kurang/turu.com\n` +
+            `item3.X-ABLabel:⚙️ Channel Owner\n` +
+            `item4.ADR:;;🇮🇩 Indonesia;;;;\n` +
+            `item4.X-ABADR:ac\n` +
+            `item4.X-ABLabel:🌍 Region\n` +
+            `item5.X-ABLabel:⚔️ Fake - Botz Owner\n` +
+            'END:VCARD'        
+        Design.sendMessage(callerId, "\`\`\`[ ! ] CALL DETECTED [ ! ]\`\`\`\n\n\`\`\`Anda Di Block Karena Telepon Bot , Silahkan Hubungi Developer Bot Untuk Membuka Block\`\`\`", MessageType.text)
+        Design.sendMessage(callerId, { displayname: `${OwnerName}`, vcard: vcard}, MessageType.contact, {contextInfo: { externalAdReply:{title: `Developer ${BotName}`,body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./database/image/thumbnail_1.jpg'),sourceUrl:`https://wa.me/6281358965281?text=Assalamualaikum`}}})
+        await sleep(5000)
+        await Design.blockUser(callerId, "add")
+        })
+        
+	antidel = false
+  Design.on("message-delete", async (m) => {
+    if (m.key.remoteJid == "status@broadcast") return;
+    if (!m.key.fromMe && m.key.fromMe) return;
+   if (antidel === false) return
+    m.message =
+      Object.keys(m.message)[0] === "ephemeralMessage"
+        ? m.message.ephemeralMessage.message
+        : m.message;
+    const jam = moment.tz("Asia/Jakarta").format("HH:mm:ss");
+    let d = new Date();
+    let locale = "id";
+    let gmt = new Date(0).getTime() - new Date("1 Jmekari 2021").getTime();
+    let weton = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"][
+      Math.floor((d * 1 + gmt) / 84600000) % 5
+     ];
+    let week = d.toLocaleDateString(locale, { weekday: "long" });
+    let calender = d.toLocaleDateString(locale, {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+     const type = Object.keys(m.message)[0];
+Designdelete = `*「 AntiDelete 」*
+› Dari : *@${m.participant.split("@")[0]}*
+› Waktu : ${jam}
+› Tanggal : ${Tanggal}`
+
+button = [{buttonId: `!000`, buttonText: {displayText: ''}, type: 1}]
+const buMess = {
+    contentText: `${Designdelete}`,
+    footerText: 'Anti Delete › Pesan ini telah di hapus',
+    buttons: button,
+    headerType: 1
+}
+Design.sendMessage(m.key.remoteJid, buMess, MessageType.buttonsMessage, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+Design.copyNForward(m.key.remoteJid, m.message)
+})
+}  
+  // Welcome Simple By Design Chanel
+Design.on('group-participants-update', async (mek) => {
+	 //const isWelkom = _welkom.includes(mek.jid)
+		try {	
+		groupMet = await Design.groupMetadata(mek.jid);
+      groupMembers = groupMet.participants;
+      groupAdmins = getGroupAdmins(groupMembers);
+      mem = mek.participants[0];
+
+
+			    console.log(mek)
+             try {
+              profilePic = await Design.getProfilePicture(mem)
+              } catch {
+              profilePic = errorImg
+}			    
+			    
+
+      try {
+        pp_grup = await Design.getProfilePicture(mek.jid);
+      } catch (e) {
+        pp_grup =
+          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60";
+      }
+                  
+
+          // if (!isWelkom) return
+      if (mek.action == 'add' && !mem.includes(Design.user.jid)) {     
+      mdata = await Design.groupMetadata(mek.jid)
+      memeg = mdata.participants.length
+      sender = mek.participants[0]
+      groupName = mdata.subject
+      groupDesc = mdata.desc
+      let v = Design.contacts[sender] || { notify: sender.replace(/@.+/, "") }
+      mek_user = v.vname || v.notify || sender.split('@')[0] || '-'
+                
+teks = `𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗡𝗲𝘄 𝗠𝗲𝗺
+*Di Grup* : ${mdata.subject}
+wa.me//${sender.split('@')[0]} 👋🏻
+
+Intro Dulu Ya!!
+▰▱▰▱▰▱▰▱▰▱▰▱▰▱
+*╭───────────────────*
+*┊❍ Nama:* 
+*┊❍ Gender:* 
+*┊❍ Umur:* 
+*┊❍ Hobby:* 
+*┊❍ Kelas:* 
+*┊❍ Askot:* 
+*┊❍ Agama:* 
+*┊❍ Status:* 
+*╰───────────────────*
+*_Salken!, Btw Semoga Betahh!!_*`
+//${encodeURIComponent(profilePic)}
+
+buff = await getBuffer(`https://api.dhamzxploit.my.id/api/canvas/welcome2?name=${encodeURIComponent(mek_user)}&mem=${encodeURIComponent(memeg)}&gcname=${mdata.subject}&picurl=${encodeURIComponent(profilePic)}&bgurl=https://megayaa.herokuapp.com/api/akaneko/mobileWallpapers`)
+
+      buttons = [
+      { buttonId: `!verify`, buttonText: { displayText: "𝑽𝒆𝒓𝒊𝒇𝒚㋛︎" }, type: 1 },
+      { buttonId: `!menu`, buttonText: { displayText: "𝑪𝒍𝒊𝒄𝒌 𝑴𝒆𝒏𝒖㋛︎" }, type: 1 },
+        ];
+        imageMsg = (
+          await Design.prepareMessageMedia(buff, "imageMessage", {
+            thumbnail: buff,
+          })
+        ).imageMessage;
+        buttonsMessage = {
+          contentText: `${teks}`,
+          footerText: `_${jam}||${Tanggal}_`,
+          imageMessage: imageMsg,
+          buttons: buttons,
+          headerType: 4,
+        };
+        prep = await Design.prepareMessageFromContent(
+          mdata.id,
+          { buttonsMessage },
+          {}
+        );
+        Design.relayWAMessage(prep);
+      }
+		//if (!isWelkom) return
+      if (mek.action == 'remove' && !mem.includes(Design.user.jid)) {
+      mdata = await Design.groupMetadata(mek.jid)
+      sender = mek.participants[0]
+      let w = Design.contacts[sender] || { notify: sender.replace(/@.+/, "") }
+      mek_user = w.vname || w.notify || sender.split('@')[0]
+      memeg = mdata.participants.length
+      
+out = `*_ミ Dadah Beban Keluarga 👋_*
+
+*_ミ wa.me//${sender.split('@')[0]}_*
+
+*ミ Semoga Tenang Di Alam Sana*
+
+*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*
+*MARI BERDOA MULAI🤲*
+
+*👥 ALL MEMBER 👥*
+
+*${mdata.subject}* 
+*▰▱▰▱▰▱▰▱▰▱▰▱▰▱*`
+     buff = await getBuffer(`https://api.dhamzxploit.my.id/api/canvas/goodbye2?name=${encodeURIComponent(mek_user)}&mem=${encodeURIComponent(memeg)}&gcname=${encodeURIComponent(mdata.subject)}&picurl=${encodeURIComponent(profilePic)}&bgurl=https://megayaa.herokuapp.com/api/akaneko/mobileWallpapers`)
+        
+        buttons = [
+          { buttonId: `!info`, buttonText: { displayText: "𝘉𝘺𝘦𝘦シ︎" }, type: 1 },
+          { buttonId: `!runtime`, buttonText: { displayText: "𝘙𝘶𝘯𝘵𝘪𝘮𝘦シ︎" }, type: 1 },
+        ];
+        imageMsg = (
+          await Design.prepareMessageMedia(buff, "imageMessage", {
+            thumbnail: buff,
+          })
+        ).imageMessage;
+        buttonsMessage = {
+          contentText: `${out}`,
+          footerText: `${jam}◌${Tanggal}\n 𝘊𝘳𝘦𝘢𝘵𝘦𝘥 𝘉𝘺 ${BotName}シ︎`,
+          imageMessage: imageMsg,
+          buttons: buttons,
+          headerType: 4,
+        };
+        prep = await Design.prepareMessageFromContent(
+          mdata.id,
+          { buttonsMessage },
+          {}
+        );
+        Design.relayWAMessage(prep);
+      }
+			} catch (e) {
+			console.log('Error : %s', color(e, 'red'))
+		}
+     
+       });
+       
+   Design.on('chat-update', async (mek) => {
+        require('./Design.js')(Design, mek)
+    })   
+/**
+ * Uncache if there is file change
+ * @param {string} module Module name or path
+ * @param {function} cb <optional> 
+ */
+function nocache(module, cb = () => { }) {
+    console.log('Module', `'${module}'`, 'is now being watched for changes')
+    fs.watchFile(require.resolve(module), async () => {
+        await uncache(require.resolve(module))
+        cb(module)
+    })
+}
+
+/**
+ * Uncache a module
+ * @param {string} module Module name or path
+ */
+function uncache(module = '.') {
+    return new Promise((resolve, reject) => {
+        try {
+            delete require.cache[require.resolve(module)]
+            resolve()
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
+starts()
