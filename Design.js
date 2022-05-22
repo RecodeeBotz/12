@@ -71,7 +71,7 @@ limitCount = setting.limitCount
 gcounttprem = "50" 
 gcounttuser = "25" 
 prefixStatus = true;
-antidel = false;
+antidelete = false
 antitrol = true 
 banChats = true
 bugc = true
@@ -2083,12 +2083,12 @@ case 'tts':
 					                    
 case 'deli':
 if (args[0] === "on") {
-if(antidel)return reply('antidelete sudah un sebelumnya')
-antidel = true
+if(antidelete)return reply('antidelete sudah un sebelumnya')
+antidelete = true
 reply(`sukses antidelete on`)
 } else if (args[0] === "off") {
-if(!antidel)return reply('antidelete sudah off sebelumnya')
-antidel = false
+if(!antidelete)return reply('antidelete sudah off sebelumnya')
+antidelete = false
 reply(`sukses antidelete off`)
 } else {
           reply('on untuk mengaktifkan, off untuk menonaktifkan')

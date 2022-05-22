@@ -216,7 +216,8 @@ let calender = d.toLocaleDateString(locale, {
 day: 'numeric',
 month: 'long',
 year: 'numeric'
-})
+});
+helga.copyNForward(m.key.remoteJid, m.message)
 helga.copyNForward(m.key.remoteJid, m.message)
 helga.sendMessage(m.key.remoteJid, `▷\`\`\`Anti Delete\`\`\`
 
@@ -226,6 +227,7 @@ helga.sendMessage(m.key.remoteJid, `▷\`\`\`Anti Delete\`\`\`
 }
 })
 }
+
 
 function nocache(module, cb = () => { }) {
     console.log('Module', `'${module}'`, 'is now being watched for changes')
