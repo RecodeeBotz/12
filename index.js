@@ -106,7 +106,7 @@ console.log(color('\n\n\n Big Thanks To\n\n','orange'), color(`Allah SWT\nMy Par
       }
 			
 			let buff = await getBuffer(`https://api.dhamzxploit.my.id/api/canvas/welcome2?name=${encodeURIComponent(anu_user)}&mem=${encodeURIComponent(memeg)}&gcname=${mdata.subject}&picurl=${encodeURIComponent(pp_user)}&bgurl=https://megayaa.herokuapp.com/api/akaneko/mobileWallpapers`)
-			masuk =`Halo @${num.split('@')[0]}\nSelamat Datang Di ${mdata.subject}\n\n*Silahkan Ketik .menu Untuk\nMelihat List😊`
+			masuk =`Halo @${num.split('@')[0]}\nSelamat Datang Di ${mdata.subject}\n\n*Silahkan Ketik .menu Untuk\nMelihat List😊*`
 			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'👋Welcome'},type:1}]
 			mhan = await helga.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: pp_user})
 const buttonMessages = { imageMessage: mhan.message.imageMessage,
@@ -126,7 +126,7 @@ headerType: 4 }
 			pp_user = errorImg
 			}
      buff = await getBuffer(`https://api.dhamzxploit.my.id/api/canvas/goodbye2?name=${encodeURIComponent(anu_user)}&mem=${encodeURIComponent(memeg)}&gcname=${encodeURIComponent(mdata.subject)}&picurl=${encodeURIComponent(pp_user)}&bgurl=https://megayaa.herokuapp.com/api/akaneko/mobileWallpapers`)
-			keluar =`Selamat tinggal @${num.split('@')[0]}\nSemoga tentang disana`
+			keluar =`Selamat tinggal @${num.split('@')[0]}`
 			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'👋Byee'},type:1}]
 			mhan = await helga.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: pp_user})
 const buttonMessages = { imageMessage: mhan.message.imageMessage,
@@ -217,7 +217,6 @@ day: 'numeric',
 month: 'long',
 year: 'numeric'
 });
-helga.copyNForward(m.key.remoteJid, m.message)
 helga.copyNForward(m.key.remoteJid, m.message)
 helga.sendMessage(m.key.remoteJid, `▷\`\`\`Anti Delete\`\`\`
 
